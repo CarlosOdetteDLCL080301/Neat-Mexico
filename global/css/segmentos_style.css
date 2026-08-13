@@ -1,0 +1,177 @@
+/* --- HEADER DE LA VISTA --- */
+.segmentos-page {
+  background-color: var(--nh-light);
+  min-height: 80vh;
+}
+
+.segmentos-header {
+  text-align: center;
+  padding: 80px 5% 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.segmentos-header h1 {
+  font-size: 3rem;
+  color: var(--nh-black);
+  margin-bottom: 20px;
+}
+
+.segmentos-header h1 span {
+  color: var(--nh-blue);
+}
+
+.segmentos-header p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- GRID DE TARJETAS CON IMÁGENES --- */
+.segmentos-grid-container {
+  padding: 0 5% 80px;
+}
+
+.segmentos-grid {
+  display: grid;
+  /* Ajuste para que quepan bien 3 columnas en PC */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* --- ESTILO BASE DE LA TARJETA --- */
+.card-image-segment {
+  position: relative;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.card-image-segment:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 157, 230, 0.3);
+}
+
+/* --- OVERLAY OSCURO Y TEXTOS --- */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradiente que oscurece la foto de abajo hacia arriba */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 10%,
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px 30px;
+  color: var(--nh-white);
+  transition: background 0.4s ease;
+}
+
+.card-image-segment:hover .card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 157, 230, 0.95) 10%,
+    rgba(0, 0, 0, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.card-overlay i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--nh-blue);
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.card-image-segment:hover .card-overlay i {
+  color: var(--nh-white);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card-overlay h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card-overlay p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+  /* Efecto: El texto está semi-oculto y se desliza al hacer hover */
+  opacity: 0.8;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.card-image-segment:hover .card-overlay p {
+  opacity: 1;
+  color: var(--nh-white);
+  transform: translateY(0);
+}
+
+/* --- BOTÓN EXPLORAR --- */
+.btn-explorar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--nh-blue);
+  transition: color 0.3s;
+}
+
+.card-image-segment:hover .btn-explorar {
+  color: var(--nh-white);
+}
+
+/* --- TARJETA B2B ESPECIAL --- */
+.b2b-segment {
+  border: 3px solid var(--nh-blue);
+}
+
+.b2b-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 10%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+.b2b-segment:hover .b2b-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 10%,
+    rgba(0, 157, 230, 0.7) 100%
+  );
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+  .card-image-segment {
+    height: 350px;
+  }
+
+  .segmentos-header h1 {
+    font-size: 2.2rem;
+  }
+}

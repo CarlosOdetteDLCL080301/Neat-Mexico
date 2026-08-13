@@ -1,0 +1,263 @@
+/* Variables y reseteo básico */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #16a085;
+  --bg-light: #f8f9fa;
+  --text-dark: #333;
+  --nh-blue: #009de6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+/* Header */
+.top-bar {
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 5%;
+  font-size: 0.85rem;
+}
+.top-bar a {
+  color: #fff;
+  text-decoration: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  border-bottom: 1px solid #eee;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Hero */
+.hero {
+  background:
+    linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
+    url("https://via.placeholder.com/1920x600?text=Industria+Quimica")
+      center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+}
+.btn-primary {
+  background: var(--accent-color);
+  color: #fff;
+}
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* Grid general */
+.section-title {
+  text-align: center;
+  margin: 50px 0 30px;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+.grid-segmentos,
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 5%;
+}
+
+/* Cards Segmentos */
+.card-segmento {
+  background: var(--bg-light);
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+  border-top: 4px solid var(--accent-color);
+}
+
+/* Cards Productos */
+.card-producto {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s;
+}
+.card-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.card-producto img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--accent-color);
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+}
+.card-body {
+  padding: 20px;
+}
+.cat-label {
+  font-size: 0.8rem;
+  color: #777;
+  text-transform: uppercase;
+}
+.card-body h4 {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+.precio {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+.btn-comprar {
+  display: block;
+  text-align: center;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.btn-comprar:hover {
+  background: var(--accent-color);
+}
+
+/* Footer */
+.main-footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 50px 5% 20px;
+  margin-top: 60px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.footer-grid h4 {
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+.footer-grid ul {
+  list-style: none;
+}
+.footer-grid a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+/* Ajustes para el Logo */
+.logo img {
+  height: 60px; /* Ajusta este valor según qué tan grande quieras el logo */
+  width: auto;
+}
+
+/* Ajustes para el Hero Banner */
+.hero {
+  padding: 0;
+  line-height: 0; /* Elimina espacios extra debajo de la imagen */
+}
+
+.hero-banner {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover; /* Asegura que no se deforme en pantallas muy anchas */
+  display: block;
+}
+
+/* Estilos para la nueva sección de Ventajas */
+.ventajas {
+  padding: 60px 5%;
+  background-color: #fff;
+}
+
+.grid-ventajas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.card-ventaja img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.card-ventaja h4 {
+  color: #0076c0; /* Azul similar al de tus íconos */
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card-ventaja p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Indicador de página activa en el menú */
+.nav-links a.active {
+  color: var(--nh-blue);
+  border-bottom: 2px solid var(--nh-blue);
+}

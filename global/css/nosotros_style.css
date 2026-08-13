@@ -1,0 +1,208 @@
+/* Variables de color de Neat Hands */
+:root {
+  --nh-light: #e0eff8;
+  --nh-blue: #009de6;
+  --nh-dark: #1972b9;
+  --nh-white: #ffffff;
+  --nh-black: #000000;
+}
+
+/* Indicador de página activa en el menú */
+.nav-links a.active {
+  color: var(--nh-blue);
+  border-bottom: 2px solid var(--nh-blue);
+}
+
+/* --- HERO ASIMÉTRICO --- */
+.about-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 80px 5%;
+  background-color: var(--nh-white);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-hero-text {
+  flex: 1 1 500px;
+  padding-right: 50px;
+}
+
+.about-hero-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--nh-black);
+  margin-bottom: 20px;
+}
+
+.about-hero-text h1 span {
+  color: var(--nh-blue);
+}
+
+.about-hero-text p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.about-hero-image {
+  flex: 1 1 400px;
+  position: relative;
+}
+
+/* Un bloque moderno que simula la imagen, reemplázalo luego con un <img> real */
+/* 1. El contenedor principal (funciona como marco) */
+.img-placeholder {
+  position: relative; /* Necesario para que el texto flote encima */
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden; /* Corta las esquinas de la foto para que queden redondeadas */
+  box-shadow: 0 20px 40px rgba(0, 157, 230, 0.2);
+}
+
+/* 2. La imagen física */
+.img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Adapta la foto al marco sin deformarla o aplastarla */
+  display: block;
+}
+
+/* 3. El cuadro difuminado que va encima de la foto */
+.texto-overlay {
+  position: absolute; /* Saca el texto del flujo normal y lo pone sobre la imagen */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  /* Crea un degradado negro transparente solo en la parte de abajo para que las letras blancas resalten */
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: var(--nh-white);
+}
+
+.texto-overlay h2 {
+  margin: 0; /* Quita márgenes por defecto para que no desalinee el cuadro */
+}
+
+/* --- TARJETAS FLOTANTES --- */
+.about-cards-section {
+  background-color: var(--nh-light);
+  padding: 100px 5%;
+  margin-top: 40px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: -150px auto 0; /* Este margen negativo hace que las tarjetas "suban" hacia la sección anterior */
+}
+
+.about-card {
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+}
+
+.about-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.about-card p,
+.about-card ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-card ul {
+  padding-left: 20px;
+}
+
+.about-card ul li {
+  margin-bottom: 10px;
+}
+
+/* Aplicación de tu paleta a las tarjetas */
+.blue-card {
+  background-color: var(--nh-blue);
+  color: var(--nh-white);
+}
+
+.light-card {
+  background-color: var(--nh-white);
+  color: var(--nh-black);
+  border-top: 5px solid var(--nh-blue);
+}
+
+.dark-card {
+  background-color: var(--nh-dark);
+  color: var(--nh-white);
+}
+
+/* --- SECCIÓN B2B (Llamado a la acción) --- */
+.about-b2b {
+  padding: 100px 5%;
+  text-align: center;
+  background-color: var(--nh-white);
+}
+
+.b2b-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.b2b-content h2 {
+  font-size: 2.5rem;
+  color: var(--nh-black);
+  margin-bottom: 20px;
+}
+
+.b2b-content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.btn-maquila {
+  display: inline-block;
+  background-color: var(--nh-black);
+  color: var(--nh-white);
+  padding: 15px 40px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+.btn-maquila:hover {
+  background-color: var(--nh-dark);
+}
+
+/* --- RESPONSIVIDAD PARA CELULARES --- */
+@media (max-width: 768px) {
+  .about-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero-text {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .card-grid {
+    margin-top: 0; /* Quitamos el efecto flotante en móviles para evitar bugs visuales */
+  }
+
+  .about-cards-section {
+    padding: 50px 5%;
+  }
+}

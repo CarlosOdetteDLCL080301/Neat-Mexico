@@ -1,0 +1,214 @@
+/* --- HERO DEL CATÁLOGO --- */
+.catalogo-hero {
+  background-color: var(--nh-white);
+  text-align: center;
+  padding: 60px 5% 20px;
+}
+
+.catalogo-hero h1 {
+  font-size: 2.8rem;
+  color: var(--nh-black);
+  margin-bottom: 10px;
+}
+
+.catalogo-hero p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* --- LAYOUT PRINCIPAL --- */
+.catalogo-container {
+  display: flex;
+  padding: 40px 5% 80px;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* --- BARRA LATERAL (FILTROS) --- */
+.sidebar {
+  flex: 0 0 250px;
+  background-color: var(--nh-white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 20px; /* Hace que el menú baje contigo al hacer scroll */
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  color: var(--nh-dark);
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--nh-light);
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.sidebar button i {
+  color: var(--nh-blue);
+  font-size: 1.1rem;
+  width: 20px; /* Alinea todos los iconos */
+  text-align: center;
+}
+
+.sidebar button:hover {
+  background: var(--nh-light);
+  color: var(--nh-dark);
+  border-color: var(--nh-blue);
+}
+
+/* --- GRID DE PRODUCTOS --- */
+.grid-productos {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.mensaje-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 50px;
+  color: #888;
+  font-size: 1.2rem;
+  background: var(--nh-white);
+  border-radius: 12px;
+}
+
+/* --- TARJETAS DE PRODUCTO --- */
+.card-producto {
+  background-color: var(--nh-white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-producto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 157, 230, 0.15);
+}
+
+.img-contenedor {
+  width: 100%;
+  height: 220px;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.img-contenedor img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Evita que la foto del envase se corte */
+  transition: transform 0.4s ease;
+}
+
+.card-producto:hover .img-contenedor img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Empuja el botón hacia abajo */
+}
+
+.cat-label {
+  font-size: 0.8rem;
+  color: var(--nh-blue);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-body h4 {
+  font-size: 1.1rem;
+  color: var(--nh-black);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.precio {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--nh-dark);
+  margin-bottom: 20px;
+}
+
+.btn-comprar {
+  margin-top: auto; /* Mantiene todos los botones alineados al fondo */
+  display: block;
+  text-align: center;
+  background: var(--nh-white);
+  color: var(--nh-blue);
+  border: 2px solid var(--nh-blue);
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background: var(--nh-blue);
+  color: var(--nh-white);
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 900px) {
+  .catalogo-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sidebar button {
+    width: auto;
+    flex: 1 1 calc(50% - 10px); /* Dos botones por fila en tablet/móvil */
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar button {
+    flex: 1 1 100%; /* Un botón por fila en pantallas muy chicas */
+  }
+}

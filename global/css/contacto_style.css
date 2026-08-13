@@ -1,0 +1,139 @@
+/* --- LAYOUT PRINCIPAL DE CONTACTO --- */
+.contacto-page {
+  background-color: var(--nh-light); /* Fondo azul clarito de tu paleta */
+  padding: 60px 5%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto-wrapper {
+  background-color: var(--nh-white);
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 157, 230, 0.1);
+  display: flex;
+  overflow: hidden; /* Mantiene el mapa dentro de los bordes redondeados */
+}
+
+/* --- PANEL IZQUIERDO (Info) --- */
+.contacto-info-panel {
+  flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-header h1 {
+  color: var(--nh-black);
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.info-header p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.info-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.detalle-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.detalle-item .icono {
+  font-size: 1.8rem;
+  background-color: var(--nh-light);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: var(--nh-blue);
+}
+
+.detalle-item h4 {
+  color: var(--nh-dark);
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.detalle-item p,
+.detalle-item .enlace-contacto {
+  color: #444;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.detalle-item .enlace-contacto:hover {
+  color: var(--nh-blue);
+  font-weight: bold;
+}
+
+/* --- BOTÓN WHATSAPP --- */
+.btn-whatsapp-hero {
+  display: inline-block;
+  background-color: #25d366; /* Verde oficial de WhatsApp */
+  color: white;
+  text-align: center;
+  padding: 18px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp-hero:hover {
+  background-color: #128c7e;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* --- PANEL DERECHO (Mapa) --- */
+.contacto-mapa-panel {
+  flex: 1;
+  min-height: 500px;
+}
+
+.contacto-mapa-panel iframe {
+  width: 100%;
+  height: 100%;
+  /* Quitamos cualquier margen interno del iframe */
+  display: block;
+}
+
+/* --- RESPONSIVIDAD PARA CELULARES --- */
+@media (max-width: 900px) {
+  .contacto-wrapper {
+    flex-direction: column;
+  }
+
+  .contacto-info-panel {
+    padding: 40px 30px;
+  }
+
+  .contacto-mapa-panel {
+    height: 400px; /* Alto fijo para celulares */
+    min-height: auto;
+  }
+
+  .info-header h1 {
+    font-size: 2.2rem;
+  }
+}
